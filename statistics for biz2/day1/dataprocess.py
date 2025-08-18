@@ -42,6 +42,8 @@ for i in trange(df.shape[0]):
 
 df = df.dropna(subset='prod')
 df = df[df['age']<=116]
+df = df.drop_duplicates()
 
 df.to_excel(r'injuries_log_10K_cleaned.xlsx',index=False)
+
 
