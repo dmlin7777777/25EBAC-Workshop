@@ -1,2 +1,2 @@
 # 25EBAC-Workshop
-Personal recording
+Personal recording. NOT for copy but welcome discussing.
