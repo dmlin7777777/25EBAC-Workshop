@@ -27,16 +27,20 @@ month_map = {
     'September': 9, 'October': 10, 'November': 11, 'December': 12
 }
 
+age_map = {
+    'Minor': 1, 'Adult': 2, 'Senior': 3
+}
+
 result2['month_num'] = result2['trmt_date'].map(month_map)
+result2['aband_num'] = result2['ageband'].map(age_map)
 
-
-df_sorted = result2.sort_values(['month_num', 'age'], ascending=[True, True])
+df_sorted = result2.sort_values(['month_num', 'aband_num'], ascending=[True, True])
 df_sorted = df_sorted.drop('month_num', axis=1)
+df_sorted = df_sorted.drop('aband_num', axis=1)
 
 fingerdf = df_sorted[(df_sorted['body_part'] == 'Finger')]
 fracturedf = df_sorted[(df_sorted['diag'] == 'Fracture')]
+ff = pd.concat([fingerdf,fracturedf],axis=0)
+ff = ff.drop_duplicates()
 
-df_sorted.to_excel(r'Combined_dataset2.xlsx',index = False)
-fingerdf.to_excel(r'Combined_dataset2_finger.xlsx',index = False)
-fracturedf.to_excel(r'Combined_dataset2_fracture.xlsx',index = False)
-
+df_sorted.to_excel(r'Combined_dataset2.xlsx',index = False)Combined_dataset2_fingerorfracture.xlsx',index = False)
