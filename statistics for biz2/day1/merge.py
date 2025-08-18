@@ -1,8 +1,8 @@
 import pandas as pd
 pd.options.mode.copy_on_write = True
-file1 = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\injuries_log_10K_cleaned.xlsx'
-file2 = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\injuries_descriptions_10K.csv'
-file3 = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\injuries_products.csv'
+file1 = r'injuries_log_10K_cleaned.xlsx'
+file2 = r'injuries_descriptions_10K.csv'
+file3 = r'injuries_products.csv'
 
 df1 = pd.read_excel(file1,engine="openpyxl")
 df2 = pd.read_csv(file2)
@@ -36,6 +36,7 @@ df_sorted = df_sorted.drop('month_num', axis=1)
 fingerdf = df_sorted[(df_sorted['body_part'] == 'Finger')]
 fracturedf = df_sorted[(df_sorted['diag'] == 'Fracture')]
 
-df_sorted.to_excel(r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\Combined_dataset2.xlsx',index = False)
-fingerdf.to_excel(r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\Combined_dataset2_finger.xlsx',index = False)
-fracturedf.to_excel(r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\Combined_dataset2_fracture.xlsx',index = False)
+df_sorted.to_excel(r'Combined_dataset2.xlsx',index = False)
+fingerdf.to_excel(r'Combined_dataset2_finger.xlsx',index = False)
+fracturedf.to_excel(r'Combined_dataset2_fracture.xlsx',index = False)
+
