@@ -3,7 +3,7 @@ import openpyxl
 import re
 from tqdm import trange
 pd.options.mode.copy_on_write = True
-file = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\injuries_log_10K.xlsx'
+file = r'injuries_log_10K.xlsx'
 df = pd.read_excel(file,engine="openpyxl")
 
 def ageband(age):
@@ -42,5 +42,5 @@ for i in trange(df.shape[0]):
 
 df = df.dropna(subset='prod')
 df = df[df['age']<=116]
-df.to_excel(
-    r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 1\PM Session\injuries_log_10K_cleaned.xlsx',index=False)
+
+df.to_excel(r'injuries_log_10K_cleaned.xlsx',index=False)
