@@ -36,7 +36,7 @@ for i in trange(df.shape[0]):
     df.loc[i, 'gender'] = gender1(gender)
 
     id = df.iloc[i]['ID']
-    df.loc[i,'ID'] = id[:2]+'*****'+id[6:]
+    df.loc[i,'ID'] = id[:2]+'*****'+id[7:]
 
     df.loc[i,'ageband'] = ageband(round(age))
 
@@ -44,3 +44,4 @@ df = df.dropna(subset='prod')
 df = df[df['age']<=116]
 
 df.to_excel(r'injuries_log_10K_cleaned.xlsx',index=False)
+
