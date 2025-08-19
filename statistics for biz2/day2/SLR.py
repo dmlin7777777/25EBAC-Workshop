@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from statsmodels.stats.diagnostic import het_breuschpagan
 from statsmodels.stats.stattools import durbin_watson
 
-file = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 2\SFB Day 2 PM _Correlation and Simple Linear Regression v31.xlsx'
+file = r'SFB Day 2 PM _Correlation and Simple Linear Regression v31.xlsx'
 df = pd.read_excel(file, engine='openpyxl',sheet_name='FitElite_Gym')
 
 y = df['Yearly Additional Spending (SGD)']
@@ -19,11 +19,3 @@ print(model.summary())
 print(bp_test)
 print(dw)
 
-
-# plt.scatter(X, y, color='blue', label='原始数据')
-# plt.plot(X, model.predict(), color='red', label='回归线')
-# plt.xlabel('X')
-# plt.ylabel('y')
-# plt.title('SLR')
-# plt.legend()
-# plt.show()
