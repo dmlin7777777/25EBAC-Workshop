@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from tqdm import trange
 
-file1 = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 3\titanic_cleaned.csv'
+file1 = r'titanic_cleaned.csv'
 
 df1 = pd.read_csv(file1)
 
@@ -50,5 +50,6 @@ plot_tree(
     proportion=True,
     fontsize=10
 )
+
 
 plt.show()
