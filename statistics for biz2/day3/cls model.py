@@ -6,21 +6,10 @@ import seaborn as sns
 import numpy as np
 from tqdm import trange
 
-file1 = r'C:\Users\12932\Desktop\nus\statistics for biz2\Day 3\titanic_cleaned.csv'
+file1 = r'titanic_cleaned.csv'
 df = pd.read_csv(file1)
 
 features = ['Pclass','Sex',	'Age']
-
-def gender1(gender):
-    if gender == 'female':
-        gendernew = 0
-    else:
-        gendernew = 1
-    return gendernew
-
-for i in trange(df.shape[0]):
-    gender = df.iloc[i]['Sex']
-    df.loc[i, 'Sex'] = gender1(gender)
 
 X = df[features]
 X_scaled = StandardScaler().fit_transform(X)
@@ -63,8 +52,7 @@ df['cluster'] = kmeans.fit_predict(X_scaled)
 #     plt.tight_layout()
 #     plt.show()
 
-
-# 使用
 # manual_pairplot(df, features, 'cluster')
 plot_df = df[features + ['cluster']].copy()
+
 print(plot_df)
